@@ -6,6 +6,7 @@ console.log('temporal string:', now.toString());
 const strDate = '2025-12-30';
 
 const temporalDate = Temporal.PlainDate.from(strDate);
+console.log('temporal date string:', temporalDate.toString());
 console.log('temporal date:', temporalDate);
 console.log('temporal date year:', temporalDate.year);
 console.log('temporal date month:', temporalDate.month);
@@ -57,3 +58,25 @@ console.log('Manual formatted date:', manualFormattedDate); // 2025-11-06
 // const todayDate = new Date();
 // console.log('new Date string:', todayDate.toISOString());
 // console.log('new Date object:', todayDate);
+
+
+/**
+ * Convert to Date Object
+ * 
+ * 
+ */
+const pd = Temporal.PlainDate.from("2025-12-30");
+// Temporal API to Date Object
+// converts to UTC midnight
+const temporalDateToDateObject = new Date(pd.toString());
+console.log('Temporal date object to UTC midnight:', temporalDateToDateObject);
+
+// Temporal API to Date Object
+// converts to Local midnight
+const temporalDateToDateObjectNumberic = new Date(pd.year, pd.month-1, pd.day);
+console.log('Temporal date object to local time:', temporalDateToDateObjectNumberic);
+
+
+
+
+
